@@ -28,12 +28,6 @@ namespace SharpScope
                 Console.WriteLine("Target- IP: " + Program.serverIP + " PORT: " + Program.serverPort);
                 tcpListener.Connect(Program.serverIP, Program.serverPort);
                 Console.WriteLine("Connection Acquired.");
-                //TODO: Remove below code and add to its own method.
-                inputStream = tcpListener.GetStream();
-                Thread.Sleep(1000);
-                StreamReader reader = new StreamReader(inputStream);
-                Console.WriteLine(reader.ReadLine());
-                Thread.Sleep(10000);
             }
             catch (Exception e)
             {
@@ -41,6 +35,15 @@ namespace SharpScope
                 return false;
             }
             return true;
+        }
+
+        public static string GetInputLine()
+        {
+            inputStream = tcpListener.GetStream();
+            Thread.Sleep(1000);
+            StreamReader reader = new StreamReader(inputStream);
+            String input = reader.ReadLine();
+            return input;
         }
 
         public static bool Close()
