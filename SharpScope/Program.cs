@@ -35,9 +35,11 @@ namespace SharpScope
             {
                 while(exit == false)
                 {
-                    Console.WriteLine(ADSB.GetInputLine()); //This pulls the data line by line- each line represents one message
+                    string inputLine = ADSB.GetInputLine();
+                    Console.WriteLine(inputLine); //This pulls the data line by line- each line represents one message
                     Thread.Sleep(10); //This makes sure we don't pull half written lines, which can mess up our interpretation
-
+                    //With the data in hand, we'll send it to a method that parses and processes it.
+                    ADSB.ProcessMessage(inputLine);
                 }
             }).Start();
         }
