@@ -144,6 +144,10 @@ namespace SharpScope
                         case 1:
                             //Callsign
                             int index1 = Convert.ToInt32(icaoHex, 16);
+                            if(aircraftList[index1] == null)
+                            {
+                                aircraftList[index1] = new Aircraft();
+                            }
 
                             aircraftList[index1].icaoID = icaoHex; //Double check ICAO ID
                             aircraftList[index1].callsign = callsign;
@@ -154,6 +158,10 @@ namespace SharpScope
                         case 3:
                             //Airborne position
                             int index3 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index3] == null)
+                            {
+                                aircraftList[index3] = new Aircraft();
+                            }
 
                             aircraftList[index3].icaoID = icaoHex;
                             aircraftList[index3].altitude = Convert.ToInt32(altitude);
@@ -187,6 +195,10 @@ namespace SharpScope
                         case 4:
                             //Airborne velocity
                             int index4 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index4] == null)
+                            {
+                                aircraftList[index4] = new Aircraft();
+                            }
 
                             aircraftList[index4].icaoID = icaoHex;
                             aircraftList[index4].groundSpeed = Convert.ToDouble(groundSpeed);
@@ -195,6 +207,10 @@ namespace SharpScope
                         case 5:
                             //Surveillance altitude
                             int index5 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index5] == null)
+                            {
+                                aircraftList[index5] = new Aircraft();
+                            }
 
                             aircraftList[index5].icaoID = icaoHex;
                             aircraftList[index5].altitude = Convert.ToInt32(altitude);
@@ -218,6 +234,10 @@ namespace SharpScope
                         case 6:
                             //Surveillance ID (This means the aircraft is being hit with a ground RADAR)
                             int index6 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index6] == null)
+                            {
+                                aircraftList[index6] = new Aircraft();
+                            }
 
                             aircraftList[index6].icaoID = icaoHex;
                             aircraftList[index6].altitude = Convert.ToInt32(altitude);
@@ -250,6 +270,10 @@ namespace SharpScope
                         case 7:
                             //Air to Air
                             int index7 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index7] == null)
+                            {
+                                aircraftList[index7] = new Aircraft();
+                            }
 
                             aircraftList[index7].icaoID = icaoHex;
                             aircraftList[index7].altitude = Convert.ToInt32(altitude);
@@ -257,6 +281,10 @@ namespace SharpScope
                         case 8:
                             //All Call
                             int index8 = Convert.ToInt32(icaoHex, 16);
+                            if (aircraftList[index8] == null)
+                            {
+                                aircraftList[index8] = new Aircraft();
+                            }
 
                             aircraftList[index8].icaoID = icaoHex;
                             break;
@@ -271,6 +299,10 @@ namespace SharpScope
                 case "AIR": //New Aircraft
                     //Add to list
                     int index = Convert.ToInt32(icaoHex, 16); //We will use the decimal form of the hex as the index.
+                    if (aircraftList[index] == null)
+                    {
+                        aircraftList[index] = new Aircraft();
+                    }
                     aircraftList[index].icaoID = icaoHex;
                     break;
                 case "STA": //Aircraft Status Change
@@ -288,6 +320,10 @@ namespace SharpScope
                         case "AD":
                             //Remove from list
                             int indexRemove = Convert.ToInt32(icaoHex, 16); //We will use the decimal form of the hex as the index.
+                            if (aircraftList[indexRemove] == null)
+                            {
+                                aircraftList[indexRemove] = new Aircraft();
+                            }
                             aircraftList[indexRemove].displayOnScope = false; //Make sure its not on the scope
                             aircraftList[indexRemove].callsign = "";
                             aircraftList[indexRemove].altitude = 0;

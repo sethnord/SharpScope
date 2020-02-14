@@ -40,6 +40,14 @@ namespace SharpScope
                     Thread.Sleep(10); //This makes sure we don't pull half written lines, which can mess up our interpretation
                     //With the data in hand, we'll send it to a method that parses and processes it.
                     ADSB.ProcessMessage(inputLine);
+                    if (ADSB.aircraftList[Convert.ToInt32(ADSB.icaoHex, 16)].callsign != null)
+                    {
+                        Console.WriteLine(ADSB.aircraftList[Convert.ToInt32(ADSB.icaoHex, 16)].callsign);
+                    }
+                    else
+                    {
+                        Console.WriteLine("NO CALLSIGN YET");
+                    }
                 }
             }).Start();
         }

@@ -15,69 +15,69 @@ namespace SharpScope
         //These are the data fields that are actually significant; we can ignore pretty much everything else in the message.
         public string icaoID //Transponder hex code
         {
-            get { return icaoID; }
-            set { icaoID = value; }
+            get;
+            set;
         }
         public string callsign
         {
-            get { return callsign; }
-            set { callsign = value; }
+            get;
+            set;
         }
         public int altitude
         {
-            get { return altitude; }
-            set { altitude = value; }
+            get;
+            set;
         }
         public double groundSpeed
         {
-            get { return groundSpeed; }
-            set { groundSpeed = value; }
+            get;
+            set;
         }
         public double latitude
         {
-            get { return latitude; }
-            set { latitude = value; }
+            get;
+            set;
         }
         public double longitude
         {
-            get { return longitude; }
-            set { longitude = value; }
+            get;
+            set;
         }
         public int verticalSpeed
         {
-            get { return verticalSpeed; }
-            set { verticalSpeed = value; }
+            get;
+            set;
         }
         public string sqwawkCode
         {
-            get { return sqwawkCode; }
-            set { sqwawkCode = value; }
+            get;
+            set;
         }
         public bool alertFlag
         {
-            get { return alertFlag; }
-            set { alertFlag = value; }
+            get;
+            set;
         } //Sqwawk has changed if true
         public bool emergencyFlag
         {
-            get { return emergencyFlag; }
-            set { emergencyFlag = value; }
+            get;
+            set;
         } //Emergency code has been selected
         public bool identFlag
         {
-            get { return identFlag; }
-            set { identFlag = value; }
+            get;
+            set;
         } //IDENT has been pressed
         public bool onGroundFlag
         {
-            get { return onGroundFlag; }
-            set { onGroundFlag = value; }
+            get;
+            set;
         } //The aircraft is on the ground. (For our purposes, these can be ignored- especially since they use
           //such a fucky method of determining position in this mode.)
         public bool displayOnScope
         {
-            get { return displayOnScope; }
-            set { displayOnScope = value; }
+            get;
+            set;
         } //Wether the aircraft should be sent to the scope or not, requirements below:
 
         //Minimum requirements to be on the scope:
